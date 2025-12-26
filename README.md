@@ -6,6 +6,7 @@
 - Improved documentation and diagnostic notes.
 
 
+
 ### Demo data
 For demo analytics, you can insert sample bookings into the database (DEMO script).
 
@@ -15,3 +16,10 @@ python -m unittest discover -s tests -v
 
 ### Configuration
 Connection settings are stored in config/env variables (see .env.example).
+
+### Запуск unit:
+python -m unittest discover -s tests -v
+
+#### Запуск load:
+python -m tests.load_test_booking
+
