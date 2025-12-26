@@ -13,3 +13,5 @@ For demo analytics, you can insert sample bookings into the database (DEMO scrip
 Run unit tests:
 python -m unittest discover -s tests -v
 
+### Configuration
+Connection settings are stored in config/env variables (see .env.example).
