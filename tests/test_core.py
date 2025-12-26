@@ -38,6 +38,17 @@ class TestBookingLogic(unittest.TestCase):
 
         db.fetchall.assert_called()
 
+    def test_conflict_none_rows(self):
+        db = MagicMock()
+        db.fetchall.return_value = None
+        self.assertFalse(
+            has_conflict(
+                db,
+                resource_id=1,
+                start_at=datetime(2025, 1, 1, 10, 0),
+                end_at=datetime(2025, 1, 1, 11, 0),
+            )
+        )
 
 
     def test_create_booking_invalid_interval(self):

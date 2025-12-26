@@ -21,6 +21,8 @@ def has_conflict(db: DB, resource_id: int, start_at: datetime, end_at: datetime)
           AND b.StartAt < ?
           AND b.EndAt   > ?
     """, (resource_id, end_at, start_at))
+
+    rows = rows or []   # защита на случай некорректного ответа драйвера/обёртки
     return len(rows) > 0
 
 def _zone_is_restricted(db: DB, resource_id: int) -> bool:
